@@ -2,7 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 500px;
-  height: 100%;
-  margin: auto;
+  width: 600px;
+  height: 500px;
+  background: #fff;
+  border-radius: 15px;
+  padding-top: 50px;
+  .layout-divider {
+    border-bottom: 1px solid #e7e7f3;
+    width: 80%;
+  }
 }

@@ -2,9 +2,15 @@ html,
 body {
     height: 100%;
     margin: 0;
+    font-family: 'Kanit', sans-serif !important;
+    font-weight: 300;
 }
 
 #root {
 	width: 100%;
-	height: 100%;
+    height: 100%;
+    background: #f0f1fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
