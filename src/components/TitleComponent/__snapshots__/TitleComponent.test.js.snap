@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TitleComponent shallow wrapper should render succesfully with snapshots 1`] = `
+Array [
+  <div
+    className="title-component"
+  >
+    <a
+      className="back-link"
+      href="/"
+      onClick={[Function]}
+    >
+      Back
+    </a>
+    <h5>
+      sample title
+    </h5>
+  </div>,
+  <div>
+    you are the 
+    sample player
+  </div>,
+]
+`;
+
+exports[`TitleComponent should render succesfully with snapshots 1`] = `
+Array [
+  <div
+    className="title-component"
+  >
+    <a
+      className="back-link"
+      href="/"
+      onClick={[Function]}
+    >
+      Back
+    </a>
+    <h5>
+      sample title
+    </h5>
+  </div>,
+  <div>
+    you are the 
+    sample player
+  </div>,
+]
+`;

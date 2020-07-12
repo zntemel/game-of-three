@@ -130,7 +130,7 @@ class MultiPlayer extends Component {
       <>
         <TitleComponent
           title="Multi player game"
-          position={this.state.position}
+          playerNumber={this.state.position}
         />
         <GameComponent turnArray={this.state.turnArray} />
         <ActionComponent actionValue={this.checkActionValue} />
