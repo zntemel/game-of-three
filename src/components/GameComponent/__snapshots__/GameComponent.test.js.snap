@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game Component shallow wrapper should render succesfully with snapshots 1`] = `
+<div
+  className="game-component"
+>
+  <div
+    className="ant-list ant-list-split"
+  >
+    <div
+      className="ant-spin-nested-loading"
+    >
+      <div
+        className="ant-spin-container"
+      >
+        <ul
+          className="ant-list-items"
+        >
+          <li
+            className="ant-list-item game-number playerOne"
+          >
+            <div>
+              playerOne
+            </div>
+            <div>
+              20
+            </div>
+          </li>
+          <li
+            className="ant-list-item game-number playerTwo"
+          >
+            <div>
+              playerTwo
+            </div>
+            <div>
+              7
+            </div>
+          </li>
+          <li
+            className="ant-list-item game-number playerOne"
+          >
+            <div>
+              playerOne
+            </div>
+            <div>
+              2
+            </div>
+          </li>
+          <li
+            className="ant-list-item game-number playerTwo"
+          >
+            <div>
+              playerTwo
+            </div>
+            <div>
+              1
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
