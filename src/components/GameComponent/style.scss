@@ -13,12 +13,12 @@
     border-radius: 12px;
     padding: 10px 20px;
   }
-  .computer {
+  .computer, .playerOne {
     color: #000;
     background: #fff;
     justify-content: flex-start !important;
   }
-  .player {
+  .player, .playerTwo {
     color: #fff;
     background: #32a2f2;
     width: fit-content;

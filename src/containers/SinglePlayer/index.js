@@ -111,7 +111,7 @@ class SinglePlayer extends Component {
       <>
         <TitleComponent title="Single player game" />
         <GameComponent turnArray={this.state.turnArray} />
-        <ActionComponent sendValue={this.checkAddedNumberAndResult} />
+        <ActionComponent actionValue={this.checkAddedNumberAndResult} />
       </>
     );
   }
