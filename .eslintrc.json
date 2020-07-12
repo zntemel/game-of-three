@@ -4,6 +4,7 @@
     "es2020": true
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -14,7 +15,9 @@
   "plugins": ["react"],
   "rules": {
     "quotes": ["error", "double"],
-    "max-lines-per-function": ["error", 20]
+    "max-lines-per-function": ["error", 20],
+    "eol-last": ["error", "always"],
+    "function-paren-newline": ["error", "never"]
   },
   "settings": {
     "react": {

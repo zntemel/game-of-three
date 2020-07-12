@@ -1,0 +1,27 @@
+.game-component {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .ant-list-items {
+    display: flex;
+    flex-direction: column;
+  }
+  .game-number {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 12px;
+    padding: 10px 20px;
+  }
+  .computer {
+    color: #000;
+    background: #fff;
+    justify-content: flex-start !important;
+  }
+  .player {
+    color: #fff;
+    background: #32a2f2;
+    width: fit-content;
+    align-self: flex-end;
+  }
+}

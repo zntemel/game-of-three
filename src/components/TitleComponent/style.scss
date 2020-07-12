@@ -1,0 +1,9 @@
+.title-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  .back-link {
+    margin-right: 50px;
+  }
+}
