@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import { PageHeader } from "antd";
+
 import "./style.scss";
 
 function TitleComponent(props) {
@@ -9,12 +9,11 @@ function TitleComponent(props) {
   return (
     <>
       <div className="title-component">
-        <BrowserRouter>
-          <Link to="/" className="back-link">
-            Back
-          </Link>
-        </BrowserRouter>
-        <h5>{title}</h5>
+        <PageHeader
+          className="game-page-header"
+          onBack={() => props.history.push("/")}
+          title={title}
+        />
       </div>
       {playerNumber && <div>you are the {playerNumber}</div>}
     </>
@@ -24,6 +23,7 @@ function TitleComponent(props) {
 TitleComponent.propTypes = {
   title: PropTypes.string,
   playerNumber: PropTypes.string,
+  history: PropTypes.object,
 };
 
 export default TitleComponent;

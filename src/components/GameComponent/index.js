@@ -10,7 +10,7 @@ function GameComponent(props) {
         dataSource={props.turnArray}
         renderItem={(turn) => (
           <List.Item key={turn.id} className={"game-number " + turn.player}>
-            <div>{turn.player}</div>
+            <div>{turn.player}:</div>
             <div>{turn.value}</div>
           </List.Item>
         )}

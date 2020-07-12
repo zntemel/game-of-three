@@ -4,8 +4,12 @@
   align-items: center;
   height: 100%;
   width: 100%;
-    padding-top: 70px;
-  
+  padding: 30px;
+  .main-screen-divider {
+    border-bottom: 1px solid #e7e7f3;
+    width: 80%;
+    margin-bottom: 60px;
+  }
   button {
     margin-bottom: 40px;
     height: 60px;
@@ -14,7 +18,7 @@
     padding: 15px 50px;
     width: 50%;
     font-size: 16px;
-    font-family: 'Kanit', sans-serif;
+    font-family: "Kanit", sans-serif;
     background: #f7637b;
     color: #fff;
     display: flex;

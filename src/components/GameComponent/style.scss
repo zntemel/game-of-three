@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: auto;
   .ant-list-items {
     display: flex;
     flex-direction: column;
@@ -13,15 +14,21 @@
     border-radius: 12px;
     padding: 10px 20px;
   }
-  .computer, .playerOne {
+  .ant-list-items {
+    padding: 10px;
+  }
+  .computer,
+  .playerOne {
     color: #000;
-    background: #fff;
+    background: #efefef;
+    width: 20%;
     justify-content: flex-start !important;
   }
-  .player, .playerTwo {
+  .player,
+  .playerTwo {
     color: #fff;
     background: #32a2f2;
-    width: fit-content;
+    width: 20%;
     align-self: flex-end;
   }
 }

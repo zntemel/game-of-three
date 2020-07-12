@@ -112,28 +112,34 @@ class MultiPlayer extends Component {
   checkActionValue = (actionValue) => {
     let currentTurnValue = this.state.turnArray[this.state.turnCount].value;
     if ((currentTurnValue + actionValue) % 3 === 0) {
-      this.setState({
+      this.setState(
+        {
           requiredNumberToBeDividedByThree: actionValue,
           turnCount: this.state.turnCount + 1,
-        }, () => this.setNextTurn());
+        },
+        () => this.setNextTurn()
+      );
     } else {
       alert("wrong number");
     }
   };
 
   render() {
-    if (!this.state.isGameStart) {
-      return <h3>Waiting for another player...</h3>;
-    }
-
     return (
       <>
         <TitleComponent
           title="Multi player game"
-          playerNumber={this.state.position}
+          // playerNumber={this.state.position}
+          history={this.props.history}
         />
-        <GameComponent turnArray={this.state.turnArray} />
-        <ActionComponent actionValue={this.checkActionValue} />
+        {!this.state.isGameStart ? (
+          <h3>Waiting for another player...</h3>
+        ) : (
+          <>
+            <GameComponent turnArray={this.state.turnArray} />
+            <ActionComponent actionValue={this.checkActionValue} />
+          </>
+        )}
       </>
     );
   }

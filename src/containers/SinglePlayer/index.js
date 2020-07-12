@@ -109,7 +109,10 @@ class SinglePlayer extends Component {
   render() {
     return (
       <>
-        <TitleComponent title="Single player game" />
+        <TitleComponent
+          title="Single player game"
+          history={this.props.history}
+        />
         <GameComponent turnArray={this.state.turnArray} />
         <ActionComponent actionValue={this.checkAddedNumberAndResult} />
       </>
