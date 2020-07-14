@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import ActionComponent from "../../components/ActionComponent";
 import GameComponent from "../../components/GameComponent";
 import TitleComponent from "../../components/TitleComponent";
+import { Modal } from "antd";
 import io from "socket.io-client";
 
 class MultiPlayer extends Component {
   socket = null;
-  socketURL = "http://192.168.178.38:3001";
+  socketURL = "http://192.168.1.28:3001";
 
   playerTypes = {
     playerOne: "playerOne",
@@ -21,28 +22,25 @@ class MultiPlayer extends Component {
     requiredNumberToBeDividedByThree: null,
     turnCount: 0,
     winner: null,
+    isButtonDisable: false,
   };
 
   componentDidMount() {
     this.socket = io(this.socketURL);
     this.socket.on("action", (action) => {
-      this.setState({
-        isGameStart: action.isGameStart || true,
-        turnArray: action.turnArray,
-        turnCount: action.turnCount,
-        winner: action.winner || null,
-      });
+      this.setState(
+        {
+          isGameStart: action.isGameStart || true,
+          turnArray: action.turnArray,
+          turnCount: action.turnCount,
+          winner: action.winner || null,
+        },
+        () => this.determineDisabledButtonsAndTheWinner()
+      );
     });
 
     this.setPlayerOne();
     this.setPlayerTwo();
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    if (nextState.winner) {
-      this.determineTheWinner();
-    }
-    return true;
   }
 
   componentWillUnmount() {
@@ -95,8 +93,36 @@ class MultiPlayer extends Component {
     return turnPlayer;
   };
 
-  determineTheWinner = () => {
-    setTimeout(() => alert(this.state.winner + " Win"), 500);
+  determineDisabledButtonsAndTheWinner = () => {
+    let lastTurn = this.state.turnArray[this.state.turnCount];
+
+    if (lastTurn.value === 1) {
+      this.setState({
+        isButtonDisable: true,
+      });
+      this.modalForGameResult(lastTurn.player);
+    } else {
+      this.setState({
+        isButtonDisable: this.state.position === lastTurn.player ? true : false,
+      });
+    }
+  };
+
+  modalForGameResult = (winner) => {
+    const that = this;
+    let message =
+      winner === this.state.position
+        ? "Congratulations you win!"
+        : "Don't be sad, just try again :)";
+
+    Modal.info({
+      title: message,
+      icon: false,
+      okText: "Play Again",
+      onOk() {
+        return that.props.history.push("/");
+      },
+    });
   };
 
   setNextTurn = () => {
@@ -129,15 +155,21 @@ class MultiPlayer extends Component {
       <>
         <TitleComponent
           title="Multi player game"
-          // playerNumber={this.state.position}
           history={this.props.history}
         />
         {!this.state.isGameStart ? (
           <h3>Waiting for another player...</h3>
         ) : (
           <>
-            <GameComponent turnArray={this.state.turnArray} />
-            <ActionComponent actionValue={this.checkActionValue} />
+            <GameComponent
+              turnArray={this.state.turnArray}
+              turnPosition={this.state.position}
+              gameType={"multiplayer"}
+            />
+            <ActionComponent
+              actionValue={this.checkActionValue}
+              isButtonDisable={this.state.isButtonDisable}
+            />
           </>
         )}
       </>

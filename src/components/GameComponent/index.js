@@ -10,7 +10,14 @@ function GameComponent(props) {
         dataSource={props.turnArray}
         renderItem={(turn) => (
           <List.Item key={turn.id} className={"game-number " + turn.player}>
-            <div>{turn.player}:</div>
+            {props.gameType === "multiplayer" ? (
+              <div>
+                {props.turnPosition === turn.player ? "You" : "Player"}:
+              </div>
+            ) : (
+              <div>{turn.player === "player" ? "You" : "Computer"}:</div>
+            )}
+
             <div>{turn.value}</div>
           </List.Item>
         )}
@@ -21,6 +28,8 @@ function GameComponent(props) {
 
 GameComponent.propTypes = {
   turnArray: PropTypes.array,
+  turnPosition: PropTypes.string,
+  gameType: PropTypes.string,
 };
 
 export default GameComponent;
