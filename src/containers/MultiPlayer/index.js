@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import ActionComponent from "../../components/ActionComponent";
 import GameComponent from "../../components/GameComponent";
 import TitleComponent from "../../components/TitleComponent";
-import { Modal } from "antd";
 import notify from "../../tools/notify"
+import modal from "../../tools/modal"
 import io from "socket.io-client";
 
 class MultiPlayer extends Component {
@@ -110,20 +110,14 @@ class MultiPlayer extends Component {
   };
 
   modalForGameResult = (winner) => {
-    const that = this;
     let message =
       winner === this.state.position
         ? "Congratulations you win!"
         : "Don't be sad, just try again :)";
 
-    Modal.info({
-      title: message,
-      icon: false,
-      okText: "Play Again",
-      onOk() {
-        return that.props.history.push("/");
-      },
-    });
+    let redirectURL = () => this.props.history.push("/")
+    
+    modal(message, redirectURL); 
   };
 
   setNextTurn = () => {

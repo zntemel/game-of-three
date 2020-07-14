@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import ActionComponent from "../../components/ActionComponent";
 import GameComponent from "../../components/GameComponent";
 import TitleComponent from "../../components/TitleComponent";
-import { Modal } from "antd";
-import notify from "../../tools/notify"
+import notify from "../../tools/notify";
+import modal from "../../tools/modal";
 import "./style.scss";
 
 class SinglePlayer extends Component {
@@ -77,7 +77,6 @@ class SinglePlayer extends Component {
     });
   };
 
-
   calculateGameNumbers = () => {
     let turnValue = this.state.turnArray[this.turnCount].value;
 
@@ -110,14 +109,9 @@ class SinglePlayer extends Component {
         ? "Don't be sad, just try again :)"
         : "Congratulations you win!";
 
-    Modal.info({
-      title: message,
-      icon: false,
-      okText: "Play Again",
-      onOk() {
-        return that.props.history.push("/");
-      },
-    });
+    let redirectURL = () => this.props.history.push("/");
+
+    modal(message, redirectURL);
   };
 
   render() {
