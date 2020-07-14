@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainScreen shallow wrapper should render succesfully with snapshots 1`] = `
+<div
+  className="main-screen"
+>
+  <h1
+    className="game-name"
+  >
+    Game Of Three
+  </h1>
+  <div
+    className="main-screen-divider ant-divider ant-divider-horizontal"
+    role="separator"
+  />
+  <button
+    className="ant-btn"
+    onClick={[Function]}
+    type="button"
+  >
+    <span>
+      Play With Computer
+    </span>
+  </button>
+  <button
+    className="ant-btn"
+    onClick={[Function]}
+    type="button"
+  >
+    <span>
+      Play With a Real Player
+    </span>
+  </button>
+  <p
+    className="copyright"
+  >
+    Copyright ©2020
+  </p>
+</div>
+`;
