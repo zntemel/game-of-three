@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import ActionComponent from "../../components/ActionComponent";
 import GameComponent from "../../components/GameComponent";
 import TitleComponent from "../../components/TitleComponent";
+import { Modal } from "antd";
+import "./style.scss";
 
 class SinglePlayer extends Component {
   turnCount = 0;
@@ -74,13 +76,6 @@ class SinglePlayer extends Component {
     });
   };
 
-  determineTheWinner = () => {
-    if (this.detectTurnPlayer() === this.playerTypes.computer) {
-      setTimeout(() => alert("You Lost"), 500);
-    } else {
-      setTimeout(() => alert("You Win"), 500);
-    }
-  };
 
   calculateGameNumbers = () => {
     let turnValue = this.state.turnArray[this.turnCount].value;
@@ -97,13 +92,30 @@ class SinglePlayer extends Component {
       for (const property in this.playerTypes) {
         this.calculateGameNumbers();
         if (this.calculateNewNumberToSendOpponent() === 1) {
-          this.determineTheWinner();
+          this.modalForGameResult(this.detectTurnPlayer());
           return true;
         }
       }
     } else {
       alert("wrong number");
     }
+  };
+
+  modalForGameResult = (winner) => {
+    const that = this;
+    let message =
+      winner === this.playerTypes.computer
+        ? "Don't be sad, just try again :)"
+        : "Congratulations you win!";
+
+    Modal.info({
+      title: message,
+      icon: false,
+      okText: "Play Again",
+      onOk() {
+        return that.props.history.push("/");
+      },
+    });
   };
 
   render() {
