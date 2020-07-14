@@ -20,7 +20,8 @@ exports[`Game Component shallow wrapper should render succesfully with snapshots
             className="ant-list-item game-number playerOne"
           >
             <div>
-              playerOne
+              Computer
+              :
             </div>
             <div>
               20
@@ -30,7 +31,8 @@ exports[`Game Component shallow wrapper should render succesfully with snapshots
             className="ant-list-item game-number playerTwo"
           >
             <div>
-              playerTwo
+              Computer
+              :
             </div>
             <div>
               7
@@ -40,7 +42,8 @@ exports[`Game Component shallow wrapper should render succesfully with snapshots
             className="ant-list-item game-number playerOne"
           >
             <div>
-              playerOne
+              Computer
+              :
             </div>
             <div>
               2
@@ -50,7 +53,8 @@ exports[`Game Component shallow wrapper should render succesfully with snapshots
             className="ant-list-item game-number playerTwo"
           >
             <div>
-              playerTwo
+              Computer
+              :
             </div>
             <div>
               1

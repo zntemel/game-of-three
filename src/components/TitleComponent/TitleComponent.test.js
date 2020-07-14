@@ -1,11 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
-import { Link } from "react-router-dom";
 import TitleComponent from "./index";
 
 describe("TitleComponent", () => {
-  const wrapper = shallow(<TitleComponent title={"sample title"} playerNumber={"sample player"} />);
+  const wrapper = shallow(<TitleComponent title={"sample title"} history={history} />);
   const instance = wrapper.instance();
 
   describe("shallow wrapper", () => {
@@ -18,16 +17,8 @@ describe("TitleComponent", () => {
       expect(instance).toEqual(null);
     });
 
-    it("should be include link to main screeen", () => {
-      expect(wrapper.find(Link).props().to).toBe("/");
-    });
-
     it("should render with correct title", () => {
-      expect(wrapper.find("h5").contains("sample title")).toBe(true);
-    });
-
-    it("should render with correct player number", () => {
-      expect(wrapper.find("div").contains("sample player")).toBe(true);
+      expect(wrapper.find("PageHeader").props().title).toEqual("sample title");
     });
   });
 });
