@@ -32,7 +32,13 @@ class SinglePlayer extends Component {
     });
   }
 
-  calculateInitialNumber = () => parseInt(Math.random() * 100, 10);
+  calculateInitialNumber = () => {
+    let createRandomNumber = parseInt(Math.random() * 100, 10)
+    if(createRandomNumber < 2)
+      this.calculateInitialNumber()
+    else 
+      return createRandomNumber
+  };
 
   detectTurnPlayer = () => {
     let turnPlayer =
