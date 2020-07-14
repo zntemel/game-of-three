@@ -4,6 +4,7 @@ import ActionComponent from "../../components/ActionComponent";
 import GameComponent from "../../components/GameComponent";
 import TitleComponent from "../../components/TitleComponent";
 import { Modal } from "antd";
+import notify from "../../tools/notify"
 import io from "socket.io-client";
 
 class MultiPlayer extends Component {
@@ -146,7 +147,7 @@ class MultiPlayer extends Component {
         () => this.setNextTurn()
       );
     } else {
-      alert("wrong number");
+      notify(`${currentTurnValue} can not be divide by ${actionValue}`);
     }
   };
 

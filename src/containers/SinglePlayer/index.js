@@ -4,6 +4,7 @@ import ActionComponent from "../../components/ActionComponent";
 import GameComponent from "../../components/GameComponent";
 import TitleComponent from "../../components/TitleComponent";
 import { Modal } from "antd";
+import notify from "../../tools/notify"
 import "./style.scss";
 
 class SinglePlayer extends Component {
@@ -86,8 +87,9 @@ class SinglePlayer extends Component {
     this.setNewTurn();
   };
 
-  checkAddedNumberAndResult = (addedNumber) => {
-    if ((this.state.turnArray[this.turnCount].value + addedNumber) % 3 === 0) {
+  checkActionNumberAndResult = (actionNumber) => {
+    let currentValue = this.state.turnArray[this.turnCount].value;
+    if ((currentValue + actionNumber) % 3 === 0) {
       /* eslint-disable */
       for (const property in this.playerTypes) {
         this.calculateGameNumbers();
@@ -97,7 +99,7 @@ class SinglePlayer extends Component {
         }
       }
     } else {
-      alert("wrong number");
+      notify(`${currentValue} can not be divide by ${actionNumber}`);
     }
   };
 
@@ -126,7 +128,7 @@ class SinglePlayer extends Component {
           history={this.props.history}
         />
         <GameComponent turnArray={this.state.turnArray} />
-        <ActionComponent actionValue={this.checkAddedNumberAndResult} />
+        <ActionComponent actionValue={this.checkActionNumberAndResult} />
       </>
     );
   }
