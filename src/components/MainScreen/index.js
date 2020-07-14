@@ -1,5 +1,6 @@
 import React from "react";
 import { Divider, Button } from "antd";
+import PropTypes from "prop-types";
 import "./style.scss";
 
 function MainScreen(props) {
@@ -17,5 +18,9 @@ function MainScreen(props) {
     </div>
   );
 }
+
+MainScreen.propTypes = {
+  history: PropTypes.object,
+};
 
 export default MainScreen;

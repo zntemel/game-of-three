@@ -29,15 +29,12 @@ class MultiPlayer extends Component {
   componentDidMount() {
     this.socket = io(this.socketURL);
     this.socket.on("action", (action) => {
-      this.setState(
-        {
+      this.setState({
           isGameStart: action.isGameStart || true,
           turnArray: action.turnArray,
           turnCount: action.turnCount,
           winner: action.winner || null,
-        },
-        () => this.determineDisabledButtonsAndTheWinner()
-      );
+        }, () => this.determineDisabledButtonsAndTheWinner());
     });
 
     this.setPlayerOne();
@@ -133,13 +130,10 @@ class MultiPlayer extends Component {
   checkActionValue = (actionValue) => {
     let currentTurnValue = this.state.turnArray[this.state.turnCount].value;
     if ((currentTurnValue + actionValue) % 3 === 0) {
-      this.setState(
-        {
+      this.setState({
           requiredNumberToBeDividedByThree: actionValue,
           turnCount: this.state.turnCount + 1,
-        },
-        () => this.setNextTurn()
-      );
+        }, () => this.setNextTurn());
     } else {
       notify(`${currentTurnValue} can not be divide by ${actionValue}`);
     }

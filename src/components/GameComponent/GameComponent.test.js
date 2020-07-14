@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow, render, mount } from "enzyme";
+import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import GameComponent from "./index";
 
@@ -41,7 +41,7 @@ describe("Game Component", () => {
     });
 
     it("list should render with correctly", () => {
-      expect(wrapper.find('List').props().dataSource).toEqual(turnArray);
+      expect(wrapper.find("List").props().dataSource).toEqual(turnArray);
     });
   });
 });

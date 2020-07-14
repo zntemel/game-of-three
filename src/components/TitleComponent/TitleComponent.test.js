@@ -1,13 +1,11 @@
 import React from "react";
-import { shallow, render, mount } from "enzyme";
+import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import { Link } from "react-router-dom";
 import TitleComponent from "./index";
 
 describe("TitleComponent", () => {
-  const wrapper = shallow(
-    <TitleComponent title={"sample title"} playerNumber={"sample player"} />
-  );
+  const wrapper = shallow(<TitleComponent title={"sample title"} playerNumber={"sample player"} />);
   const instance = wrapper.instance();
 
   describe("shallow wrapper", () => {

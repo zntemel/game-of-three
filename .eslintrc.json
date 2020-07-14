@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2020": true
+    "es2020": true,
+    "jest": true
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "parser": "babel-eslint",
@@ -15,7 +16,7 @@
   "plugins": ["react"],
   "rules": {
     "quotes": ["error", "double"],
-    "max-lines-per-function": ["error", 20],
+    "max-lines-per-function": ["error", 30],
     "eol-last": ["error", "always"],
     "function-paren-newline": ["error", "never"]
   },
