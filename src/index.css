@@ -2,7 +2,7 @@ html,
 body {
     height: 100%;
     margin: 0;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Kanit', sans-serif !important;
     font-weight: 300;
 }
 

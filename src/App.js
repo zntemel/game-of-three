@@ -4,6 +4,7 @@ import Layout from "./containers/Layout";
 import SinglePlayer from "./containers/SinglePlayer";
 import MultiPlayer from "./containers/MultiPlayer";
 import MainScreen from "./components/MainScreen";
+import 'antd/dist/antd.css';
 
 function App() {
   return (

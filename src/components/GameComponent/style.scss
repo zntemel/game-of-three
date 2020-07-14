@@ -10,25 +10,23 @@
   .game-number {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
     margin: 10px;
     border-radius: 12px;
     padding: 10px 20px;
-  }
-  .ant-list-items {
-    padding: 10px;
+    width: 25%;
   }
   .computer,
   .playerOne {
     color: #000;
     background: #efefef;
-    width: 20%;
     justify-content: flex-start !important;
   }
   .player,
   .playerTwo {
     color: #fff;
     background: #32a2f2;
-    width: 20%;
     align-self: flex-end;
   }
 }

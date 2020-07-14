@@ -7,4 +7,22 @@
   background: #fff;
   border-radius: 15px;
   box-shadow: 0px 0px 8px #ccc;
+  .ant-btn,
+  .ant-btn-primary {
+    border-radius: 15px;
+    font-family: "Kanit", sans-serif;
+    background: #f7637b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      border: 1px solid #f7637b;
+      color: #f7637b;
+    }
+    &:active {
+      background: #f7637b;
+      color: #fff;
+    }
+  }
 }

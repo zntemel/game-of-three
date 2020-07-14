@@ -4,23 +4,8 @@
   align-items: flex-start;
   align-content: center;
   width: 80%;
-  padding-top: 20px;
-  .game-page-header {
-    display: flex;
-    .ant-page-header-heading-left {
-      display: flex;
-      align-items: center;
-      .ant-page-header-back {
-        margin-right: 20px;
-      }
-      .ant-page-header-heading-title {
-        font-size: 20px;
-        font-family: "Kanit", sans-serif;
-        font-weight: 400;
-      }
-    }
-  }
-  .back-link {
-    margin-right: 50px;
+  .ant-page-header-heading-title {
+    font-size: 20px;
+    font-weight: 400;
   }
 }
