@@ -2,7 +2,7 @@
 
 Game for one player or two players. This application is deployed to Netlify. Please visit [live](https://game-of-three.netlify.app/) website.
 
-For backend application [click here](git@github.com:zntemel/game-of-three-backend.git)
+For backend application [click here](https://github.com/zntemel/game-of-three-backend)
 
 ## Getting Started
 
@@ -63,7 +63,7 @@ Runs the app tests.<br>
 - [Socket.io-client](https://www.npmjs.com/package/socket.io-client) package is used for socket connection.
 - [Eslint](https://eslint.org/) is used for consistent code base.
 - Prop Types library is used.
-- Node version ```14.5.0 ``` is used.
+- Node version ```14.5.0``` is used.
 
 ## Something Missing?
 
