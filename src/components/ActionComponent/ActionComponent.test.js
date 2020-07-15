@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 import ActionComponent from "./index";
 
 describe("ActionComponent", () => {
-  const wrapper = shallow(<ActionComponent/>);
+  const wrapper = shallow(<ActionComponent />);
   const instance = wrapper.instance();
 
   describe("shallow wrapper", () => {
@@ -18,7 +18,7 @@ describe("ActionComponent", () => {
     });
 
     it("should be include 3 button", () => {
-      expect(wrapper.find('Button')).toHaveLength(3);
+      expect(wrapper.find("Button")).toHaveLength(3);
     });
   });
 });

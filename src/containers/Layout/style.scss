@@ -30,3 +30,15 @@
     }
   }
 }
+
+.ant-modal-confirm-body-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  .ant-modal-confirm-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

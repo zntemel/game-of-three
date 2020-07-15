@@ -135,7 +135,7 @@ class MultiPlayer extends Component {
           turnCount: this.state.turnCount + 1,
         }, () => this.setNextTurn());
     } else {
-      notify(`${currentTurnValue} can not be divide by ${actionValue}`);
+      notify(`${currentTurnValue} can not be divided by ${actionValue}`);
     }
   };
 

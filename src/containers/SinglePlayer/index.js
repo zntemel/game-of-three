@@ -5,7 +5,6 @@ import GameComponent from "../../components/GameComponent";
 import TitleComponent from "../../components/TitleComponent";
 import notify from "../../tools/notify";
 import modal from "../../tools/modal";
-import "./style.scss";
 
 class SinglePlayer extends Component {
   turnCount = 0;
@@ -104,7 +103,7 @@ class SinglePlayer extends Component {
         }
       }
     } else {
-      notify(`${currentValue} can not be divide by ${actionNumber}`);
+      notify(`${currentValue} can not be divided by ${actionNumber}`);
     }
   };
 

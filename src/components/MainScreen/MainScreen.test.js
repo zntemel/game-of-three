@@ -6,7 +6,7 @@ import MainScreen from "./index";
 describe("MainScreen", () => {
   const wrapper = shallow(<MainScreen />);
   const instance = wrapper.instance();
-  const gameName = 'Game Of Three';
+  const gameName = "Game Of Three";
 
   describe("shallow wrapper", () => {
     it("should render succesfully with snapshots", () => {
@@ -23,11 +23,11 @@ describe("MainScreen", () => {
     });
 
     it("should be include divider component", () => {
-      expect(wrapper.find('Divider').exists()).toBeTruthy()
+      expect(wrapper.find("Divider").exists()).toBeTruthy();
     });
 
     it("should be include two button", () => {
-      expect(wrapper.find('Button')).toHaveLength(2);
+      expect(wrapper.find("Button")).toHaveLength(2);
     });
   });
 });
