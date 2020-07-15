@@ -9,7 +9,7 @@ import io from "socket.io-client";
 
 class MultiPlayer extends Component {
   socket = null;
-  socketURL = "http://192.168.1.28:3001";
+  socketURL = "https://game-of-three-backend.herokuapp.com/";
 
   playerTypes = {
     playerOne: "playerOne",
