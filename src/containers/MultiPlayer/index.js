@@ -99,7 +99,7 @@ class MultiPlayer extends Component {
         isButtonDisable: true,
       });
       this.modalForGameResult(lastTurn.player);
-    } else {
+    } else if (this.state.count !== 1){
       this.setState({
         isButtonDisable: this.state.position === lastTurn.player ? true : false,
       });
